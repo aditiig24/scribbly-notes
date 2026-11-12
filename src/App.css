@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f5f3f0;
+  color: #292638;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.navbar {
+  background: linear-gradient(120deg, #7048c8, #a45acb);
+  color: white;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  box-shadow: 0 4px 15px #00000018;
+}
+
+.navbar h1 {
+  font-size: 27px;
+}
+
+.navbar span {
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1250px;
+  margin: auto;
+  padding: 35px 20px;
+}
+
+.welcome {
+  margin-bottom: 28px;
+}
+
+.welcome h2 {
+  color: #7048c8;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.welcome p {
+  color: #777;
+  line-height: 1.6;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 25px;
+  align-items: start;
+}
+
+.editor,
+.preview {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px #0000000d;
+}
+
+.editor h2,
+.preview h2 {
+  margin-bottom: 20px;
+  color: #7048c8;
+  font-size: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 230px;
+  resize: vertical;
+  padding: 15px;
+  border: 1px solid #ddd4f3;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  line-height: 1.7;
+}
+
+textarea:focus {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px #8b5cf620;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.controls label {
+  font-weight: 600;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.controls select {
+  padding: 12px;
+  border: 1px solid #ddd4f3;
+  border-radius: 8px;
+  background: #faf9ff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.paper {
+  min-height: 450px;
+  padding: 30px 25px 30px 45px;
+  background-color: #fffef9;
+  border-radius: 5px;
+  overflow-wrap: anywhere;
+  position: relative;
+  box-shadow: 0 3px 15px #00000018;
+}
+
+.paper::before {
+  content: "";
+  position: absolute;
+  left: 32px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #f1a5a5;
+}
+
+.paper.lined {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 30px,
+    #b9cce5 31px,
+    transparent 32px
+  );
+}
+
+.paper.grid {
+  background-image:
+    linear-gradient(#c9d7e8 1px, transparent 1px),
+    linear-gradient(90deg, #c9d7e8 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+.paper.plain {
+  background-image: none;
+}
+
+.handwriting {
+  font-size: 19px;
+  line-height: 32px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.handwriting-one {
+  font-family: "Kalam", cursive;
+  font-size: 19px;
+}
+
+.handwriting-two {
+  font-family: "Patrick Hand", cursive;
+  font-size: 21px;
+}
+
+.handwriting-three {
+  font-family: "Caveat", cursive;
+  font-size: 25px;
+}
+
+@media (max-width: 800px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .welcome h2 {
+    font-size: 23px;
+  }
+}
+.download-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.download-buttons button {
+  padding: 13px 18px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(120deg, #7048c8, #a45acb);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.download-buttons button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px #7048c844;
+}
+
+.download-buttons button:active {
+  transform: scale(0.97);
+}
+.pages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.page-number {
+  position: absolute;
+  bottom: 12px;
+  right: 18px;
+  color: #999;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+}
+
+.paper {
+  min-height: 450px;
+  height: 450px;
+}
+/* Handwriting Styles */
+
+.handwriting-one {
+  font-family: 'Caveat', cursive;
+  font-size: 23px;
+}
+
+.handwriting-two {
+  font-family: 'Kalam', cursive;
+  font-size: 21px;
+}
+
+.handwriting-three {
+  font-family: 'Patrick Hand', cursive;
+  font-size: 22px;
+}
+/* Natural handwriting effects */
+
+.handwriting > div {
+  letter-spacing: 0.3px;
+  word-spacing: 1px;
+  transform-origin: left center;
+}
+
+.handwriting > div:nth-child(odd) {
+  transform: rotate(-0.3deg);
+}
+
+.handwriting > div:nth-child(even) {
+  transform: rotate(0.3deg);
+}
+
+.handwriting > div:nth-child(3n) {
+  letter-spacing: 0.6px;
+}
+
+.handwriting-one {
+  line-height: 34px;
+}
+
+.handwriting-two {
+  line-height: 33px;
+}
+
+.handwriting-three {
+  line-height: 35px;
+}
+/* Custom notebook page sizes */
+
+.pages-container .paper.a4 {
+  width: 100%;
+  max-width: 794px;
+  min-height: 1123px;
+  box-sizing: border-box;
+}
+
+.pages-container .paper.letter {
+  width: 100%;
+  max-width: 816px;
+  min-height: 1056px;
+  box-sizing: border-box;
+}
+
+.pages-container .paper.compact {
+  width: 100%;
+  max-width: 600px;
+  min-height: 800px;
+  box-sizing: border-box;
+}
+/* Word and character statistics */
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px;
+  background: #f5f0ff;
+  border-radius: 10px;
+  color: #7048c8;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stats span {
+  padding: 5px 8px;
+}
+.search-result-item mark {
+  background-color: #ffeb3b;
+  color: #333;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.last-edited {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+  text-align: center;
+  background: #f1f5f9;
+  padding: 10px;
+  border-radius: 10px;
+}
